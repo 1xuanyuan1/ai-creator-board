@@ -1,0 +1,20 @@
+{
+  "name": "ai-creator-board",
+  "interface": {
+    "displayName": "AI Creator Board"
+  },
+  "plugins": [
+    {
+      "name": "ai-creator-board",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ai-creator-board"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

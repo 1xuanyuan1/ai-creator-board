@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ai-creator-board": {
+      "command": "node",
+      "args": ["./dist/server.mjs"]
+    }
+  }
+}

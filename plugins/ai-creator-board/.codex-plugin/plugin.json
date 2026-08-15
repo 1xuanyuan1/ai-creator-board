@@ -1,0 +1,19 @@
+{
+  "name": "ai-creator-board",
+  "version": "0.1.0",
+  "description": "Visual AI creator workflow board with Codex execution, decisions, Git sync and archives.",
+  "author": {
+    "name": "轩辕"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Creator Board",
+    "shortDescription": "把 AI 视频创作变成可视化、可决策、可追踪的看板。",
+    "longDescription": "在 Codex 中管理初稿、待办、执行、待决策、完成和月度归档，并使用独立 Codex 线程生产四平台内容包。",
+    "developerName": "轩辕",
+    "category": "Productivity",
+    "capabilities": ["MCP App", "Skills", "Scheduled workflows"],
+    "defaultPrompt": "打开 AI Creator Board，显示当前创作看板。"
+  },
+  "mcpServers": "./.mcp.json"
+}

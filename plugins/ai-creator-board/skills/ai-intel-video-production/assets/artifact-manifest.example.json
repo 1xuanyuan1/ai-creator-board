@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "taskId": "replace-with-task-id",
+  "profile": "ai-intel",
+  "completedAt": "2026-08-15T10:00:00.000Z",
+  "viewpoint": "A",
+  "concept": "Agent",
+  "artifacts": []
+}

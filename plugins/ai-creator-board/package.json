@@ -1,0 +1,37 @@
+{
+  "name": "@1xuanyuan1/ai-creator-board",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --exclude tests/ui.test.tsx",
+    "test:ui": "vitest run tests/ui.test.tsx",
+    "validate": "node scripts/validate-package.mjs",
+    "check": "npm run typecheck && npm run test && npm run test:ui && npm run build && npm run validate",
+    "dev": "node --watch dist/server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@openai/codex-sdk": "0.147.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@testing-library/react": "16.3.2",
+    "@types/node": "24.10.13",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "esbuild": "0.25.12",
+    "jsdom": "27.4.0",
+    "typescript": "5.9.3",
+    "vitest": "4.0.17"
+  }
+}
