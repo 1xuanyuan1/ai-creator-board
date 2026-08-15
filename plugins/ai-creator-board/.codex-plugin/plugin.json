@@ -1,6 +1,6 @@
 {
   "name": "ai-creator-board",
-  "version": "0.1.0",
+  "version": "0.1.0+codex.20260815050124",
   "description": "Visual AI creator workflow board with Codex execution, decisions, Git sync and archives.",
   "author": {
     "name": "轩辕"

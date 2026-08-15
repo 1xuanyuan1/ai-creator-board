@@ -13,11 +13,15 @@ const required = [
 
 await Promise.all(required.map((file) => access(resolve(root, file))));
 const manifest = JSON.parse(await readFile(resolve(root, ".codex-plugin/plugin.json"), "utf8"));
-if (manifest.name !== "ai-creator-board" || manifest.version !== "0.1.0") {
+if (manifest.name !== "ai-creator-board" || !manifest.version.startsWith("0.1.0")) {
   throw new Error("Unexpected plugin identity");
 }
 const mcp = JSON.parse(await readFile(resolve(root, ".mcp.json"), "utf8"));
-if (!mcp.mcpServers?.["ai-creator-board"]) {
+const boardServer = mcp.mcpServers?.["ai-creator-board"];
+if (!boardServer) {
   throw new Error("MCP server entry is missing");
+}
+if (boardServer.cwd !== ".") {
+  throw new Error("MCP server must start from the plugin root");
 }
 console.log("AI Creator Board package is complete.");
