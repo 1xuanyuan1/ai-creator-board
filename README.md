@@ -33,7 +33,15 @@
    git -C ~/ai-creator-board-data lfs install --local
    ```
 
-2. 添加 marketplace 并安装插件：
+2. 启用 Codex 的本地 MCP App 渲染能力，然后完整退出并重新打开 Codex：
+
+   ```bash
+   codex features enable enable_mcp_apps
+   ```
+
+   `enable_mcp_apps` 在当前 Codex 版本中仍标记为 under development。未启用时，插件工具仍能运行，但 `open_board` 只会返回 JSON，不会渲染 React 面板。
+
+3. 添加 marketplace 并安装插件：
 
    ```bash
    codex plugin marketplace add 1xuanyuan1/ai-creator-board --ref main
@@ -42,7 +50,7 @@
 
    插件提交了已打包的 `dist/server.mjs`、`dist/board.js` 和 `dist/board.css`；安装阶段不运行 npm lifecycle 脚本。
 
-3. 创建仅保存在本机的 `~/.config/ai-creator-board/config.json`：
+4. 创建仅保存在本机的 `~/.config/ai-creator-board/config.json`：
 
    ```json
    {
@@ -58,7 +66,9 @@
 
    每台电脑使用不同、稳定的 `deviceId`。配置文件、Git 凭证、Bitto 登录态与环境变量不进入任何仓库。
 
-4. 在 Codex 中说“打开 AI Creator Board”，首次使用点击“激活这台电脑”。激活新设备会让旧设备的定时 Worker 自动退出。
+5. 新建一个 Codex 任务并说“打开 AI Creator Board”。首次使用点击“激活这台电脑”；激活新设备会让旧设备的定时 Worker 自动退出。
+
+如果工具调用成功但页面只显示 JSON，先运行 `codex features list`，确认 `enable_mcp_apps` 为 `true`，再用 `Command-Q` 完整退出 Codex 后重新打开。已有任务不会热加载 MCP App 渲染器。
 
 ## 定时任务
 
